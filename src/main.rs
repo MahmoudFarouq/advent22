@@ -1,19 +1,3 @@
-use functools::cache;
-use std::collections::HashMap;
+use aoc_runner_derive::aoc_main;
 
-mod toolbox;
-
-use toolbox::point::Point;
-
-fn main() {
-    println!("{:?}", fibonacci(50));
-    println!("{:?}", Point::new(3, 4));
-}
-
-#[cache]
-fn fibonacci(n: usize) -> usize {
-    match n {
-        0 | 1 => n,
-        n => fibonacci(n - 1) + fibonacci(n - 2),
-    }
-}
+aoc_main! { lib = advent22 }
